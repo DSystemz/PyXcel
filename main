@@ -12,13 +12,13 @@ from PySimpleGUI import PysimpleGUI as sg
 
 sg.theme('Reddit')
 layout = [
-    [sg.Text('Nome do Arquivo:'),sg.Input((key='arquivo'))],
+    [sg.Text('Nome do Arquivo:'),sg.Input(key='arquivo')],
     [sg.Text('User:'),sg.input(key='usuario')],
     [sg.Checkbox('Salvar o usuario?')],
     [sg.Button('Avançar')]
 ]
 
-janela = sg.Window(Tela Inicial, layout)
+janela = sg.Window('Tela Inicial', layout)
 while True:
     eventos, valores = janela.read()
     if eventos == sg.WINDOW_CLOSED:
@@ -26,6 +26,10 @@ while True:
     if eventos == 'Avançar':
         if valores['usuario'] == 'oberdannn' and valores['arquivo'] == 'remessa202101.tx':
             print('Olá! Seja muito bem vindo a Interface PyXcel')
+# DEFINA TUDO EM FUNCOES E CHAME AS EM UMA INTERFACE COM O PySimpleGUI
+# "nao é possível" agregar tudo em uma estrutura for
+# x = CPF()
+# print(x)
 def CPF():
        abra = open('remessa202101.txt', 'r') #formatar o arquivo com archive
        for line in abra:

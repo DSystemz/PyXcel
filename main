@@ -1,0 +1,51 @@
+# abra o arquivo especificado, leia e salve os dados cobrados em um arquivo csv
+
+# CPF/CNPJ, Nome Cooperativa, Conta, Descr. Linha de crédito, Saldo devedor, Valor da parcela,
+# Qtd de parcelas vencidas, Risco atual, dias atraso, quantidaded de parcelas contratadas, prestações pagas
+# Saldo atualizado, Flag Judicial, Flag extrajudicial, flag vip, nome do cooperado
+# Executável deve estar no mesmo diretório do arquivo
+
+#import pandas as pd
+import os.path
+import sys
+from PySimpleGUI import PysimpleGUI as sg
+
+sg.theme('Reddit')
+layout = [
+    [sg.Text('Nome do Arquivo:'),sg.Input((key='arquivo'))],
+    [sg.Text('User:'),sg.input(key='usuario')],
+    [sg.Checkbox('Salvar o usuario?')],
+    [sg.Button('Avançar')]
+]
+
+janela = sg.Window(Tela Inicial, layout)
+while True:
+    eventos, valores = janela.read()
+    if eventos == sg.WINDOW_CLOSED:
+        break
+    if eventos == 'Avançar':
+        if valores['usuario'] == 'oberdannn' and valores['arquivo'] == 'remessa202101.tx':
+            print('Olá! Seja muito bem vindo a Interface PyXcel')
+def CPF():
+       abra = open('remessa202101.txt', 'r') #formatar o arquivo com archive
+       for line in abra:
+           count = 0+1
+           leia = "{}{}".format(count, line.strip())
+           linha_1 = leia # instancia representa linha do arquivo
+           dados = (line[29:44] + ";" + line[29:54])
+           cpf1 = print(dados)
+           print(cpf1)
+def NomeCooperativa():
+    abra_coop =  open('remessa202101.txt', 'r')
+    for line in abra_coop:
+        count = 0+1
+        leia = "{}{}".format(count, line.strip())
+        coop = print(line[54:74])
+        print(coop)
+def Conta():
+    abra_conta = open('remessa202101.txt', 'r')
+    for line in abra_conta:
+        count = 0+1
+        leia = "{}{}".format(count, line.strip())
+        acc = print(line[84:92])
+        print(acc)

@@ -19,7 +19,7 @@ else:
     var = (arq + data_text + '.csv')
     f = open('{}'.format(var), 'w')
     abra = open(fname)
-    cab = ('| CPF |' + ';' + '| COOPERATIVA |' + ';' + '| CONTA |' + ';' + '| MODALIDADE |' + ';' + '| DESCRICAO LINHA DE CREDITO |' + ';' + '| SALDO DEVEDOR |' + ';' + '| VALOR DA PARCELA |' + ';' + '| QPV |' + ';' + '| RISCO ATUAL |' + ';' + '| DIAS ATRASO |' + ';' + '| QPC |' + ';' + '| PRESTACOES PAGAS |' + ';' + '| SALDO ATUALIZADO |' + ';' + '| FLAG JUDICIAL |' + ';' + '| FLAG EXTRAJUDICIAL |' + ';' + '| FLAG VIP |' + "| NOME |")
+    cab = ('| CPF |' + ';' + '| COOPERATIVA |' + ';' + '| CONTA |' + ';' + '| MODALIDADE |' + ';' + '| DESCRICAO LINHA DE CREDITO |' + ';' + '| SALDO DEVEDOR |' + ';' + '| VALOR DA PARCELA |' + ';' + '| QPV |' + ';' + '| RISCO ATUAL |' + ';' + '| DIAS ATRASO |' + ';' + '| QPC |' + ';' + '| PRESTACOES PAGAS |' + ';' + '| SALDO ATUALIZADO |' + ';' + '| FLAG JUDICIAL |' + ';' + '| FLAG EXTRAJUDICIAL |' + ';' + '| FLAG VIP |' + ";" + "| NOME |")
     f.write(cab)
     for line in abra:
         count = 0 + 1

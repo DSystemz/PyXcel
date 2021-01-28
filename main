@@ -1,3 +1,5 @@
+# coding=UTF-8
+import os
 import sys
 from datetime import date
 from PySimpleGUI import PySimpleGUI as sg
@@ -19,7 +21,7 @@ else:
     var = (arq + data_text + '.csv')
     f = open('{}'.format(var), 'w')
     abra = open(fname)
-    cab = ('| CPF |' + ';' + '| COOPERATIVA |' + ';' + '| CONTA |' + ';' + '| MODALIDADE |' + ';' + '| DESCRICAO LINHA DE CREDITO |' + ';' + '| SALDO DEVEDOR |' + ';' + '| VALOR DA PARCELA |' + ';' + '| QPV |' + ';' + '| RISCO ATUAL |' + ';' + '| DIAS ATRASO |' + ';' + '| QPC |' + ';' + '| PRESTACOES PAGAS |' + ';' + '| SALDO ATUALIZADO |' + ';' + '| FLAG JUDICIAL |' + ';' + '| FLAG EXTRAJUDICIAL |' + ';' + '| FLAG VIP |' + ";" + "| NOME |")
+    cab = ('| CPF |' + ';' + '| COOPERATIVA |' + ';' + '| CONTA |' + ';' + '| MODALIDADE |' + ';' + '| SALDO DEVEDOR |' + ';' + '| VALOR DA PARCELA |' + ';' + '| QPV |' + ';' + '| RISCO ATUAL |' + ';' + '| DIAS ATRASO |' + ';' + '| QPC |' + ';' + '| PRESTACOES PAGAS |' + ';' + '| SALDO ATUALIZADO |' + ';' + '| FLAG JUDICIAL |' + ';' + '| FLAG EXTRAJUDICIAL |' + ';' + '| FLAG VIP |' + ";" + "| NOME |")
     f.write(cab)
     for line in abra:
         count = 0 + 1
@@ -28,3 +30,16 @@ else:
         str(a)
         f.write(a)
     f.close()
+    os.system('move C:\\PyXcel\\{} C:\\REMESSA\\'.format(var))
+    if not os.path.exists('C:\\REMESSA\\'):
+        os.system('mkdir C:\\REMESSA\\')
+        sg.Popup('A pasta REMESSA foi criada, reinicie o aplicativo.')
+        sys.exit()
+    elif os.path.exists('C:\\REMESSA\\'):
+        os.system("start EXCEL.EXE C:\\REMESSA\\" + var)
+        sys.exit()
+    # <- CÓDIGOS PARA USO FUTURO ->
+    #user = input('Digite o nome de usuario')
+    #os.system("move {} C:\\Users\\Usuario\\Desktop\\REMESSAS".format(var))
+    #sg.popup('O arquivo foi movido para a pasta REMESSAS!')
+    #sg.popup('Até a próxima. =D')
